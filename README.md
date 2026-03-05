@@ -18,7 +18,7 @@ The standard **Integer Linear Programming (ILP)** formulation is:
 
 ## Quick start
 
-### Run one instance (`run_gap.jl`)
+### Run one instance
 
 1. Edit the configuration in `run_gap.jl`:
    - `FAMILY` (one of `:A`, `:B`, `:C`, `:D`, `:E`)
@@ -30,7 +30,7 @@ The standard **Integer Linear Programming (ILP)** formulation is:
 julia --project=. run_gap.jl
 ```
 
-### Run a batch (`test/solve_all.jl`)
+### Run a batch
 
 Run the default batch runner from the repository root:
 
