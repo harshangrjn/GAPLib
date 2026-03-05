@@ -13,18 +13,6 @@ using Gurobi
 
 const FAMILIES = [:A, :B, :C, :D, :E]
 
-struct SolveResult
-    family::Symbol
-    file::String
-    m::Int
-    n::Int
-    objective::Float64
-    termination_status::String
-    known_opt::Union{Int,Nothing}
-    opt_source::Symbol          # :optimum, :upper_bound, or :unknown
-    match::Symbol               # :exact, :within_ub, :mismatch, :no_reference
-end
-
 function solve_all(; families=FAMILIES, time_limit::Float64=300.0, silent::Bool=true)
     results = SolveResult[]
     mismatches = SolveResult[]

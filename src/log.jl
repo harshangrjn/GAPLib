@@ -1,5 +1,5 @@
 """
-Pretty logging helpers for GAP scripts.
+Logging helpers for GAP scripts.
 """
 
 function print_result_box(r)

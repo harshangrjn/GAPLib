@@ -2,6 +2,7 @@
     Shared API for loading and solving GAP instances across families A–E.
 """
 
+include("structs.jl")
 include("parse_gap.jl")
 include("model_gap.jl")
 include("known_optima.jl")

@@ -1,25 +1,4 @@
 """
-    GAPInstance
-
-Holds a single Generalized Assignment Problem instance parsed from the
-Yagiura / OR-Library format.
-
-Fields:
-  m  – number of agents
-  n  – number of jobs
-  c  – cost matrix  (m × n), c[i,j] = cost of assigning job j to agent i
-  r  – resource matrix (m × n), r[i,j] = resource consumed
-  b  – capacity vector (length m), b[i] = capacity of agent i
-"""
-struct GAPInstance
-    m::Int
-    n::Int
-    c::Matrix{Int}
-    r::Matrix{Int}
-    b::Vector{Int}
-end
-
-"""
     parse_gap_file(filepath::String) -> Vector{GAPInstance}
 
 Parse a GAP instance file in the Yagiura / OR-Library format.

@@ -16,12 +16,33 @@ The standard **Integer Linear Programming (ILP)** formulation is:
 
 ---
 
-This document summarizes:
+## Quick start
 
-- Instance-type dimensions (`m`, `n`)
-- Constraint counts in the JuMP ILP
-- Gurobi objective values obtained in our runs
-- Source/reference links for the benchmark sets
+### Run one instance (`run_gap.jl`)
+
+1. Edit the configuration in `run_gap.jl`:
+   - `FAMILY` (one of `:A`, `:B`, `:C`, `:D`, `:E`)
+   - `FILE` (for example, `"a05100"` or `"e20200"`)
+   - `TIME_LIMIT_SEC`
+2. Run from the repository root:
+
+```bash
+julia --project=. run_gap.jl
+```
+
+### Run a batch (`test/solve_all.jl`)
+
+Run the default batch runner from the repository root:
+
+```bash
+julia --project=. test/solve_all.jl
+```
+
+To run a selected subset (for example families `A` and `C`) and set your own time limit:
+
+```bash
+julia --project=. -e 'include("test/solve_all.jl"); solve_all(families=[:A, :C], time_limit=600.0, silent=true)'
+```
 
 ---
 
@@ -128,7 +149,7 @@ ILP Optimizer: **Gurobi 13.0.0**.
 
 ## 4) Reference links
 
-### Benchmark format and datasets
+### Benchmark datasets
 
 - OR-Library GAP format/info:  
   <https://people.brunel.ac.uk/~mastjjb/jeb/orlib/gapinfo.html>

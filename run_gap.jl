@@ -28,19 +28,7 @@ include(joinpath(@__DIR__, "src", "log.jl"))
 const FAMILY = :C               # Available: :A, :B, :C, :D, :E
 const FILE = "c10400"           # Example: "a05100", "d10200", "e20200"
 const TIME_LIMIT_SEC = 500.0    # Solver time limit in seconds
-const QUIET = false             # true => suppress solver output
-
-struct SolveResult
-    family::Symbol
-    file::String
-    m::Int
-    n::Int
-    objective::Float64
-    termination_status::String
-    known_opt::Union{Int,Nothing}
-    opt_source::Symbol
-    match::Symbol
-end
+const QUIET = true             # true => suppress solver output
 
 function solve_one(family::Symbol, file::String; time_limit::Float64=300.0, quiet::Bool=false)
     data = load_gap_instance(family, file)
