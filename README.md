@@ -1,19 +1,18 @@
-# Generalized Assignment Problem Benchmark in Julia/JuMP
+# Generalized Assignment Problem Benchmark
 
-The **Generalized Assignment Problem (GAP)** assigns each job to exactly one agent while respecting agent capacities.  
-Each assignment has:
+This repository provides a Julia/JuMP benchmark suite for modeling and solving standard Generalized Assignment Problem (GAP) instances, and reports problem-size and solver-performance statistics for well-known benchmark sets from the literature. Source links are provided in the Reference links section at the end of this file.
+
+The **Generalized Assignment Problem (GAP)** assigns each job to exactly one agent while respecting agent capacity limits. Each assignment is characterized by:
 
 - a **cost** `c[i,j]` to assign job `j` to agent `i`
 - a **resource consumption** `r[i,j]`
 - an agent capacity limit `b[i]`
 
-The standard ILP is:
+The standard **Integer Linear Programming (ILP)** formulation is:
 
 - minimize total assignment cost
-- subject to: each job is assigned exactly once
-- and each agent's used resources do not exceed capacity
-
-This repository provides JuMP models for these GAP instances and summarizes problem-size and solving statistics for well-known benchmark sets from the literature, with source links listed in the Reference links section at the bottom of this file.
+- subject to each job being assigned exactly once
+- and each agent's total resource usage not exceeding its capacity
 
 ---
 
@@ -23,8 +22,6 @@ This document summarizes:
 - Constraint counts in the JuMP ILP
 - Gurobi objective values obtained in our runs
 - Source/reference links for the benchmark sets
-
-Solver version used in these runs: **Gurobi 13.0.0**.
 
 ---
 
@@ -70,6 +67,7 @@ So per instance:
 ### 3.1 Proven optimal instances
 
 Hardware: Apple M3 Pro, 36 GB unified memory, 12 CPU cores.
+ILP Optimizer: **Gurobi 13.0.0**.
 
 | Family | Instance | Objective | Runtime (s) |
 |---|---|---:|---:|
