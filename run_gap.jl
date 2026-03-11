@@ -26,8 +26,8 @@ include(joinpath(@__DIR__, "src", "log.jl"))
 # Hard-coded run configuration (edit these values as needed)
 # --------------------------------------------------------------------------
 const FAMILY = :C               # Available: :A, :B, :C, :D, :E
-const FILE = "c10400"           # Example: "a05100", "d10200", "e20200"
-const TIME_LIMIT_SEC = 500.0    # Solver time limit in seconds
+const FILE = "c20400"           # Example: "a05100", "d10200", "e20200"
+const TIME_LIMIT_SEC = 1500.0    # Solver time limit in seconds
 const QUIET = true             # true => suppress solver output
 
 function solve_one(family::Symbol, file::String; time_limit::Float64=300.0, quiet::Bool=false)

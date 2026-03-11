@@ -116,17 +116,19 @@ ILP Optimizer: **Gurobi 13.0.0**.
 | C | `c20400` | 4782 | 2.59 |
 | C | `c30900` | 9982 | 127.14 |
 | C | `c40400` | 4244 | 2.71 |
-| C | `c401600` | 17146 | pending |
-| C | `c60900` | 9326 | pending |
+| C | `c401600` | 17146 (ref. 17146) | 1500* |
+| C | `c60900` | 9327 (ref. 9326) | 1500* |
 | D | `d05100` | 6353 | 4.06 |
-| D | `d05200` | 12742 | pending |
-| D | `d10400` | 24961 | pending |
+| D | `d05200` | 12742 | 121.30 |
+| D | `d10400` | 24962 (ref. 24961) | 1500* |
 | E | `e05100` | 12681 | 2.25 |
 | E | `e05200` | 24930 | 0.62 |
 | E | `e10100` | 11577 | 6.43 |
 | E | `e10200` | 23307 | 5.64 |
 | E | `e20100` | 8436 | 7.82 |
 | E | `e20200` | 22380 | 14.60 |
+
+*`*` indicates the 1,500-second time limit was reached. In these rows, the first objective is the best incumbent at timeout and the parenthesized value is the reference optimum. Gaps at timeout: `c401600` 0.01%, `c60900` 0.02% (best 9327), `d10400` 0.01% (best 24962).*
 
 ### 3.2 Best values found but not proven optimal (hits `TIME_LIMIT`)
 
